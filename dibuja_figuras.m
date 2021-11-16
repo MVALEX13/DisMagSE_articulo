@@ -34,27 +34,19 @@ DELTA = sqrt(2./(2*pi*FREQS*4*pi*1e-7*sigma));
 
 %%
 figure(1)
-subplot(1,2,1);
 plot(1e3*SIM_RX_100.d_x, 1e6*SIM_RX_100.M_TX_RX,'b-');
 hold on;
 grid on;
 %plot(SIM_RX_150.d_x, SIM_RX_150.M_RX_TX,'k-')
 plot(1e3*MED.L_100.d(IND_F,:), 1e6*MED.M_100.M(IND_F,:),'bo');
-legend({'theorical M with z = 100 mm','experimental M with z = 100 mm'});
-xlabel({"x shift","(mm)"});
-ylabel({"Mutual inductance M","(uH)"});
-title({"variation of mutual inductance M with the shift in x","(coils separated with z = 10 cm)"});
 
-subplot(1,2,2);
-plot(1e3*SIM_RX_150.d_x, 1e6*SIM_RX_150.M_TX_RX,'b-');
-hold on;
-grid on;
+plot(1e3*SIM_RX_150.d_x, 1e6*SIM_RX_150.M_TX_RX,'g-');
 %plot(SIM_RX_150.d_x, SIM_RX_150.M_RX_TX,'k-')
-plot(1e3*MED.M_150.d(IND_F,:), 1e6*MED.M_150.M(IND_F,:),'bo');
-legend({'theorical M with z = 150 mm','experimental M with z = 150 mm'});
+plot(1e3*MED.M_150.d(IND_F,:), 1e6*MED.M_150.M(IND_F,:),'go');
+legend({'theorical M with z = 100 mm', 'experimental M with z = 100 mm', 'theorical M with z = 150 mm','experimental M with z = 150 mm'},'location','south');
 xlabel({"x shift","(mm)"});
 ylabel({"Mutual inductance M","(uH)"});
-title({"variation of mutual inductance M with the shift in x","(coils separated with z = 15 cm)"});
+title({"variation of mutual inductance M with the shift in x"});
  
 %%
 % la resistance de conduction DC ne varie pas avec le shift (diff valeurs
